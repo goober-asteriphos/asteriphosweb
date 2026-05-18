@@ -252,7 +252,7 @@
             width: max-content;
             gap: 30px;
             transform: translate3d(0, 0, 0); 
-            animation: scrollHorizontal 45s linear infinite; /* Adjusted speed to accommodate more cards */
+            animation: scrollHorizontal 45s linear infinite;
         }
 
         .scroller-track:hover {
@@ -265,14 +265,9 @@
             box-sizing: border-box;
         }
 
-        /* Loops seamlessly at -25% now because the track contains 4 full duplicate blocks */
         @keyframes scrollHorizontal {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-            100% {
-                transform: translate3d(-25%, 0, 0);
-            }
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-25%, 0, 0); }
         }
 
         /* --- TEAM PROFILE PHOTOS --- */
@@ -449,133 +444,7 @@
     <section id="team" class="alt-bg">
         <h2>Meet The Crew</h2>
         <div class="scroller-container">
-            <div class="scroller-track">
-                
-                <div class="card team-card">
-                    <img src="1.png" alt="Goober" class="crew-img">
-                    <h3>Founder & Lead Dev</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
-                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
-                    <h3>Lead 3D Artist</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="3.png" alt="Community Manager" class="crew-img">
-                    <h3>Community Manager</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="4.png" alt="Developer AM" class="crew-img">
-                    <h3>Developer AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Metal</p>
-                    <p>Assisting in codebase engineering, asset management, and development pipelines.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="5.png" alt="Community Affairs AM" class="crew-img">
-                    <h3>Community Affairs AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Radial</p>
-                    <p>Supporting operational public relations, outreach, and user engagement strategies.</p>
-                </div>
-
-                <div class="card team-card">
-                    <img src="1.png" alt="Goober" class="crew-img">
-                    <h3>Founder & Lead Dev</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
-                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
-                    <h3>Lead 3D Artist</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="3.png" alt="Community Manager" class="crew-img">
-                    <h3>Community Manager</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="4.png" alt="Developer AM" class="crew-img">
-                    <h3>Developer AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Metal</p>
-                    <p>Assisting in codebase engineering, asset management, and development pipelines.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="5.png" alt="Community Affairs AM" class="crew-img">
-                    <h3>Community Affairs AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Radial</p>
-                    <p>Supporting operational public relations, outreach, and user engagement strategies.</p>
-                </div>
-
-                <div class="card team-card">
-                    <img src="1.png" alt="Goober" class="crew-img">
-                    <h3>Founder & Lead Dev</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
-                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
-                    <h3>Lead 3D Artist</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="3.png" alt="Community Manager" class="crew-img">
-                    <h3>Community Manager</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="4.png" alt="Developer AM" class="crew-img">
-                    <h3>Developer AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Metal</p>
-                    <p>Assisting in codebase engineering, asset management, and development pipelines.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="5.png" alt="Community Affairs AM" class="crew-img">
-                    <h3>Community Affairs AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Radial</p>
-                    <p>Supporting operational public relations, outreach, and user engagement strategies.</p>
-                </div>
-
-                <div class="card team-card">
-                    <img src="1.png" alt="Goober" class="crew-img">
-                    <h3>Founder & Lead Dev</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
-                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
-                    <h3>Lead 3D Artist</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="3.png" alt="Community Manager" class="crew-img">
-                    <h3>Community Manager</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="4.png" alt="Developer AM" class="crew-img">
-                    <h3>Developer AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Metal</p>
-                    <p>Assisting in codebase engineering, asset management, and development pipelines.</p>
-                </div>
-                <div class="card team-card">
-                    <img src="5.png" alt="Community Affairs AM" class="crew-img">
-                    <h3>Community Affairs AM</h3>
-                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Radial</p>
-                    <p>Supporting operational public relations, outreach, and user engagement strategies.</p>
-                </div>
-
-            </div>
+            <div class="scroller-track" id="dynamic-scroller-track"></div>
         </div>
     </section>
 
@@ -595,6 +464,69 @@
         </div>
         <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 Starlight. All rights reserved.</p>
     </footer>
+
+    <script>
+        // EDIT OR ADD YOUR CARDS IN THIS ARRAY ONLY
+        const teamData = [
+            {
+                name: "Goober",
+                role: "Founder & Lead Dev",
+                image: "1.png",
+                description: "Driving the creative vision and technical execution of Starlight's experiences."
+            },
+            {
+                name: "Hiring Soon",
+                role: "Lead 3D Artist",
+                image: "2.png",
+                description: "Crafting the immersive, out-of-this-world environments our players love."
+            },
+            {
+                name: "Hiring Soon",
+                role: "Community Manager",
+                image: "3.png",
+                description: "Keeping the discord active, collecting feedback, and running stellar events."
+            },
+            {
+                name: "Hiring Soon",
+                role: "Developer AM",
+                image: "4.png",
+                description: "Assisting in codebase engineering, asset management, and development pipelines."
+            },
+            {
+                name: "Hiring Soon",
+                role: "Community Affairs AM",
+                image: "5.png",
+                description: "Supporting operational public relations, outreach, and user engagement strategies."
+            }
+        ];
+
+        // This function automatically builds the scroller and clones it 4x for a seamless loop
+        function engineBuildScroller() {
+            const track = document.getElementById('dynamic-scroller-track');
+            if(!track) return;
+            
+            let trackHTML = '';
+            
+            // Loop 4 times to create the quad-cloned track automatically
+            for (let i = 0; i < 4; i++) {
+                teamData.forEach(member => {
+                    trackHTML += `
+                        <div class="card team-card">
+                            <img src="${member.image}" alt="${member.name}" class="crew-img">
+                            <h3>${member.role}</h3>
+                            <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">${member.name}</p>
+                            <p>${member.description}</p>
+                        </div>
+                    `;
+                });
+            }
+            
+            track.innerHTML = trackHTML;
+        }
+
+        // Initialize engine on page load
+        window.addEventListener('DOMContentLoaded', engineBuildScroller);
+    </script>
 
 </body>
 </html>
