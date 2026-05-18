@@ -30,7 +30,6 @@
         }
 
         /* --- DYNAMIC STARFIELD SYSTEM --- */
-        /* CSS background star generator using shadows to avoid page lag */
         .starfield, .starfield-slow {
             position: fixed;
             top: 0;
@@ -71,7 +70,6 @@
             to { background-position: -550px 1100px; }
         }
 
-        /* Ensure content stays above the dynamic background particles */
         nav, header, section, footer {
             position: relative;
             z-index: 10;
@@ -245,7 +243,6 @@
             width: 100%;
             box-sizing: border-box;
             padding: 20px 0;
-            /* Smooth side fading mask effect */
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
@@ -254,12 +251,10 @@
             display: flex;
             width: max-content;
             gap: 30px;
-            /* Hardware acceleration on the GPU to lock 60FPS rendering smoothness */
             transform: translate3d(0, 0, 0); 
             animation: scrollHorizontal 30s linear infinite;
         }
 
-        /* Pauses sliding movement instantly when a user hovers a card */
         .scroller-track:hover {
             animation-play-state: paused;
         }
@@ -267,10 +262,9 @@
         .team-card {
             width: 280px;
             flex-shrink: 0;
-            box-sizing: border-box; /* Fixes inner-border calculation glitches */
+            box-sizing: border-box;
         }
 
-        /* Seamless layout positioning via exact half splits */
         @keyframes scrollHorizontal {
             0% {
                 transform: translate3d(0, 0, 0);
@@ -339,6 +333,17 @@
             background-color: transparent;
             color: #5865F2;
             box-shadow: 0 0 20px rgba(88, 101, 242, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 15px rgba(193, 109, 245, 0.2);
         }
 
         /* --- FOOTER --- */
@@ -490,7 +495,11 @@
     <footer id="contact">
         <h2>Ready to Collaborate?</h2>
         <p style="margin-bottom: 30px; color: var(--text-muted);">Send us a transmission for business inquiries, brand partnerships, or recruitment.</p>
-        <a href="mailto:nohello@asteriphos.com" class="btn btn-primary" style="margin-bottom: 40px;">nohello@asteriphos.com</a>
+        <a href="mailto:nohello@asteriphos.com" class="btn btn-primary" style="margin-bottom: 30px;">nohello@asteriphos.com</a>
+        
+        <div style="margin-bottom: 40px;">
+            <a href="https://login.microsoftonline.com/asteriphos.com/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3a%2f%2fwww.office.com%2flandingv2&response_type=code+id_token&scope=openid+profile+https%3a%2f%2fwww.office.com%2fv2%2fOfficeHome.All&response_mode=form_post&nonce=639147283086148098.NTMyNDc1YWQtM2QyNC00NjRlLWEyZGUtMjUyOTU5Mjg4MzZjNzllNTY2NDUtYzY3ZS00OTQ1LWI0YmQtMmIxMzUyYWE2ZmZh&ui_locales=en-US&mkt=en-US&client-request-id=d0c45860-906f-4bee-ba89-5277080f4284&state=1ikkuSHNNrOZt6l2Ef7kqHxjdxcKDvg3J8yBOB_J7yMHMMPMq6t5mXrFvFRqKgVG5WBTHshS9JXwmYAFuKxQig-0Tqb0bOg5n_k8hEdAHD28g6kNHJceOjtbLuaW4Z8VB12mRIVd3gVewXoxAoPQhZF0pixgP9EX1Ifi9woiUDR-uUOYcptdZEZJ_1YbjPApRoD-l_jqi5995nYaOeg6g8M9quBVIqh5OJNy1j82bEz_i6lBbRaLXy0q_d48RuZBwSkPjysb1Zrzv1C2NXFw2gq7kSWugmj0uleEFgpS11PrhlwnL02VJwc1ixO6cB6ivOFevXWVOjnwRtQEKwgVLVdzow0lUseWQSe92Q4WT-KN-cZDzBfiRhqOps29AwLDciuO7xi2Kix6hV9WRu2YjP5Yw3hjKe52tdOEpvJgdG-cw7o-SQA4SXqH_fyn1g1se1P6KGrdZ6zZdVp0y39z4_CykATQeQS_PCIeD-TvfChGWm27EF0u-86nj29cDx_4&x-client-SKU=ID_NET8_0&x-client-ver=8.14.0.0&allowbacktocommon=True" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">Staff Sign In</a>
+        </div>
         
         <div class="footer-links">
             <a href="https://discord.gg/e7sgNDwFu9" target="_blank">Discord</a> • 
