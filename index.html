@@ -30,6 +30,7 @@
         }
 
         /* --- DYNAMIC STARFIELD SYSTEM --- */
+        /* CSS background star generator using shadows to avoid page lag */
         .starfield, .starfield-slow {
             position: fixed;
             top: 0;
@@ -70,6 +71,7 @@
             to { background-position: -550px 1100px; }
         }
 
+        /* Ensure content stays above the dynamic background particles */
         nav, header, section, footer {
             position: relative;
             z-index: 10;
@@ -237,29 +239,27 @@
             margin-bottom: 0;
         }
 
-        /* --- INFINITE TEAM SCROLLER SYSTEM --- */
+        /* --- FIXED INFINITE TEAM SCROLLER SYSTEM --- */
         .scroller-container {
             overflow: hidden;
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            width: 100%;
+            box-sizing: border-box;
             padding: 20px 0;
-            /* Creates a smooth fade out on the left and right edges */
-            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            /* Smooth side fading mask effect */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
         .scroller-track {
             display: flex;
-            gap: 30px;
             width: max-content;
-            animation: scrollHorizontal 25s linear infinite;
+            gap: 30px;
+            /* Hardware acceleration on the GPU to lock 60FPS rendering smoothness */
+            transform: translate3d(0, 0, 0); 
+            animation: scrollHorizontal 30s linear infinite;
         }
 
-        /* Pauses sliding movement when a user hovers over a crew member card */
+        /* Pauses sliding movement instantly when a user hovers a card */
         .scroller-track:hover {
             animation-play-state: paused;
         }
@@ -267,13 +267,20 @@
         .team-card {
             width: 280px;
             flex-shrink: 0;
+            box-sizing: border-box; /* Fixes inner-border calculation glitches */
         }
 
+        /* Seamless layout positioning via exact half splits */
         @keyframes scrollHorizontal {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-50% - 15px)); } /* Perfect split logic for the duplicated loop */
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
         }
 
+        /* --- TEAM PROFILE PHOTOS --- */
         .crew-img {
             width: 110px;
             height: 110px;
