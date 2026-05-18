@@ -252,7 +252,7 @@
             width: max-content;
             gap: 30px;
             transform: translate3d(0, 0, 0); 
-            animation: scrollHorizontal 30s linear infinite;
+            animation: scrollHorizontal 35s linear infinite;
         }
 
         .scroller-track:hover {
@@ -265,12 +265,13 @@
             box-sizing: border-box;
         }
 
+        /* Loops seamlessly at -25% now because the track contains 4 full duplicate blocks */
         @keyframes scrollHorizontal {
             0% {
                 transform: translate3d(0, 0, 0);
             }
             100% {
-                transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-25%, 0, 0);
             }
         }
 
@@ -450,6 +451,44 @@
         <div class="scroller-container">
             <div class="scroller-track">
                 
+                <div class="card team-card">
+                    <img src="1.png" alt="Goober" class="crew-img">
+                    <h3>Founder & Lead Dev</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
+                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
+                    <h3>Lead 3D Artist</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="3.png" alt="Community Manager" class="crew-img">
+                    <h3>Community Manager</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
+                </div>
+
+                <div class="card team-card">
+                    <img src="1.png" alt="Goober" class="crew-img">
+                    <h3>Founder & Lead Dev</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
+                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
+                    <h3>Lead 3D Artist</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="3.png" alt="Community Manager" class="crew-img">
+                    <h3>Community Manager</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
+                </div>
+
                 <div class="card team-card">
                     <img src="1.png" alt="Goober" class="crew-img">
                     <h3>Founder & Lead Dev</h3>
