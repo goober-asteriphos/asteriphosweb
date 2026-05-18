@@ -30,7 +30,6 @@
         }
 
         /* --- DYNAMIC STARFIELD SYSTEM --- */
-        /* CSS background star generator using shadows to avoid page lag */
         .starfield, .starfield-slow {
             position: fixed;
             top: 0;
@@ -71,7 +70,6 @@
             to { background-position: -550px 1100px; }
         }
 
-        /* Ensure content stays above the dynamic background particles */
         nav, header, section, footer {
             position: relative;
             z-index: 10;
@@ -239,6 +237,60 @@
             margin-bottom: 0;
         }
 
+        /* --- INFINITE TEAM SCROLLER SYSTEM --- */
+        .scroller-container {
+            overflow: hidden;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            padding: 20px 0;
+            /* Creates a smooth fade out on the left and right edges */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        .scroller-track {
+            display: flex;
+            gap: 30px;
+            width: max-content;
+            animation: scrollHorizontal 25s linear infinite;
+        }
+
+        /* Pauses sliding movement when a user hovers over a crew member card */
+        .scroller-track:hover {
+            animation-play-state: paused;
+        }
+
+        .team-card {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        @keyframes scrollHorizontal {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 15px)); } /* Perfect split logic for the duplicated loop */
+        }
+
+        .crew-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px auto;
+            display: block;
+            border: 2px solid rgba(206, 169, 245, 0.3);
+            box-shadow: 0 0 15px rgba(193, 109, 245, 0.15);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover .crew-img {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
         /* --- BUTTONS --- */
         .btn-container {
             display: flex;
@@ -383,21 +435,47 @@
 
     <section id="team" class="alt-bg">
         <h2>Meet The Crew</h2>
-        <div class="grid-3" style="text-align: center;">
-            <div class="card">
-                <h3>Founder & Lead Dev</h3>
-                <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
-                <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
-            </div>
-            <div class="card">
-                <h3>Lead 3D Artist</h3>
-                <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                <p>Crafting the immersive, out-of-this-world environments our players love.</p>
-            </div>
-            <div class="card">
-                <h3>Community Manager</h3>
-                <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
-                <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
+        <div class="scroller-container">
+            <div class="scroller-track">
+                
+                <div class="card team-card">
+                    <img src="1.png" alt="Goober" class="crew-img">
+                    <h3>Founder & Lead Dev</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
+                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
+                    <h3>Lead 3D Artist</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="3.png" alt="Community Manager" class="crew-img">
+                    <h3>Community Manager</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
+                </div>
+
+                <div class="card team-card">
+                    <img src="1.png" alt="Goober" class="crew-img">
+                    <h3>Founder & Lead Dev</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Goober</p>
+                    <p>Driving the creative vision and technical execution of Starlight's experiences.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="2.png" alt="Lead 3D Artist" class="crew-img">
+                    <h3>Lead 3D Artist</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Crafting the immersive, out-of-this-world environments our players love.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="3.png" alt="Community Manager" class="crew-img">
+                    <h3>Community Manager</h3>
+                    <p style="color: var(--accent-purple); font-weight: bold; margin-bottom: 10px;">Hiring Soon</p>
+                    <p>Keeping the discord active, collecting feedback, and running stellar events.</p>
+                </div>
+
             </div>
         </div>
     </section>
